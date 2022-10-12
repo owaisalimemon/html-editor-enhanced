@@ -1090,6 +1090,10 @@ class ToolbarWidgetState extends State<ToolbarWidget> {
                           .toUpperCase());
                   updateStatus(null);
                 }
+                 widget.controller
+                    .execCommand('removeFormat', argument: 'hiliteColor');
+                widget.controller
+                    .execCommand('hiliteColor', argument: 'initial');
               }
             } else {
               var proceed = true;
