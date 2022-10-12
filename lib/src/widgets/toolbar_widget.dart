@@ -77,7 +77,7 @@ class ToolbarWidgetState extends State<ToolbarWidget> {
   Color _foreColorSelected = Colors.black;
 
   /// Sets the selected item for the background color dialog
-  Color _backColorSelected = Colors.yellow;
+  Color _backColorSelected = Color(0x00000000);
 
   /// Sets the selected item for the list style dropdown
   String? _listStyleSelectedItem;
@@ -199,7 +199,7 @@ class ToolbarWidgetState extends State<ToolbarWidget> {
       });
     } else {
       setState(mounted, this.setState, () {
-        _backColorSelected = Colors.yellow;
+        _backColorSelected = Color(0x00000000);
       });
     }
     //check the list style if it matches one of the predetermined styles and update the toolbar
@@ -1084,7 +1084,7 @@ class ToolbarWidgetState extends State<ToolbarWidget> {
                     true;
                 if (proceed) {
                   widget.controller.execCommand('hiliteColor',
-                      argument: (Colors.yellow.value & 0xFFFFFF)
+                      argument: (Color(0x00000000).value & 0x000000)
                           .toRadixString(16)
                           .padLeft(6, '0')
                           .toUpperCase());
@@ -1169,7 +1169,7 @@ class ToolbarWidgetState extends State<ToolbarWidget> {
                                   if (t.getIcons()[index].icon ==
                                       Icons.format_color_fill) {
                                     setState(mounted, this.setState, () {
-                                      _backColorSelected = Colors.yellow;
+                                      _backColorSelected = Color(0x00000000);
                                     });
                                     widget.controller.execCommand(
                                         'removeFormat',
